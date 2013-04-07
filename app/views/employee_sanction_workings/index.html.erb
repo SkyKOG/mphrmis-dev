@@ -1,0 +1,30 @@
+<h1>Listing employee_sanction_workings</h1>
+
+<table>
+  <tr>
+      
+      <th>Working Since</th>
+      <th>Employment Type</th>
+      <th>Employee Class</th>
+      <th>Specialisation</th>
+      <th>Qualification</th>
+      <th>Designation (English)</th>
+      <th>Designation (Hindi)</th>
+      <th>Working Status</th>
+  </tr>
+
+<% @employee_sanction_workings.each do |employee_sanction_working| %>
+  <tr>
+    
+    <td><%= employee_sanction_working.try(:join_date).try(:strftime, "%d-%m-%Y") || "Not Entered" %></td>
+    <td><%= employee_sanction_working.employment_type%></td>
+    <td><%= employee_sanction_working.employee_class%></td>
+    <td><%= employee_sanction_working.specialisation_name%></td>
+    <td><%= employee_sanction_working.qualification_name%></td>
+    <td><%= employee_sanction_working.Designation_English%></td>
+    <td><%= employee_sanction_working.Designation_hindi%></td>
+    <td><%= employee_sanction_working.status_name%></td>
+  </tr>
+<% end %>
+</table>
+
